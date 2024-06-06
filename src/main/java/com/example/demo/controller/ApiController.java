@@ -1,23 +1,23 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.PublicApiResponse;
 import com.example.demo.model.ResponseModel;
 import com.example.demo.service.PublicApiService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.UUID;
 
 @RestController
+@RequestMapping("/microservice")
+@RequiredArgsConstructor
 public class ApiController {
 
-    @Autowired
-    private PublicApiService publicApiService;
+    private final PublicApiService publicApiService;
 
-    @GetMapping()
+    @GetMapping("/retornojson")
     public ResponseModel getData() {
-        ResponseModel response = new ResponseModel();
+        ResponseModel response = ResponseModel.builder().build();
         response.setName("Emanuel");
         response.setUuid(UUID.randomUUID().toString());
         response.setApiResponse(publicApiService.getPublicApiResponse());
