@@ -15,7 +15,7 @@ public class ApiController {
     @Autowired
     private PublicApiService publicApiService;
 
-    @GetMapping("/api/data")
+    @GetMapping()
     public ResponseModel getData() {
         ResponseModel response = new ResponseModel();
         response.setName("Emanuel");
