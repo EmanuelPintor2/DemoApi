@@ -1,7 +1,8 @@
 package com.example.demo.model;
-import lombok.Data;
-import lombok.Builder;
 
+
+import lombok.Builder;
+import lombok.Data;
 
 @Data
 @Builder
@@ -10,5 +11,4 @@ public class PublicApiResponse {
     private int id;
     private String title;
     private String body;
-
 }

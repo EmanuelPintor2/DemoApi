@@ -8,5 +8,5 @@ import lombok.Builder;
 public class ResponseModel {
     private String name;
     private String uuid;
-    private PublicApiResponse apiResponse;
+    private ApiResponse apiResponse;
 }
