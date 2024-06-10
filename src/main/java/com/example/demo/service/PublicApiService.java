@@ -4,17 +4,15 @@ import com.example.demo.exception.ApiRequestException;
 import com.example.demo.model.ApiResponse;
 import com.example.demo.model.PublicApiResponse;
 import com.example.demo.model.Status;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 
 @Service
+@RequiredArgsConstructor
 public class PublicApiService {
     private final WebClient webClient;
-
-    public PublicApiService() {
-        this.webClient = WebClient.create();
-    }
 
     public ApiResponse getPublicApiResponse() {
         PublicApiResponse data= this.webClient.get()
